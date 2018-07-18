@@ -1,0 +1,71 @@
+{
+  "kind": "discovery#restDescription",
+  "discoveryVersion": "v1",
+  "id": "IAFusion",
+  "name": "IAFusion",
+  "version": "1.0",
+  "protocol": "dll",
+  "baseUrl": null,
+  "basePath": "IAFusion",
+  "auth": {},
+  "dependencies": [
+    "IAFusion.dll",
+    "ImageProcessor.dll"
+  ],
+  "schemas": {
+    "Fusion": {
+      "id": "Fusion",
+      "type": "object"
+    }
+  },
+  "resources": {
+    "Fusion": {
+      "title": "Fusion",
+      "isInterfaceAsset": true,
+      "methods": {
+        "Process": {
+          "title": "Process",
+          "description": "Process",
+          "response": {
+            "type": "null"
+          },
+          "parameters": {
+            "id": {
+              "type": "string",
+              "required": true
+            },
+            "input": {
+              "type": "string",
+              "required": true
+            },
+            "mask": {
+              "type": "string",
+              "required": true
+            },
+            "mode": {
+              "type": "string",
+              "required": true
+            }
+          }
+        }
+      },
+      "events": {
+        "FusionFinished": {
+          "id": "FusionFinished",
+          "properties": {
+            "id": {
+              "title": "Id",
+              "description": "Id fourni",
+              "type": "string"
+            },
+            "result": {
+              "title": "Resultat",
+              "description": "Chemin de l'image de sortie",
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}
